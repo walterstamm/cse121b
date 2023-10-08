@@ -5,7 +5,7 @@
 /* Step 2 - Variables */
 let fullName = 'Walter Stamm';
 const currentYear = 2023
-const profilePicture = '/images/walterstamm.png'
+const profilePicture = 'images/walterstamm.png'
 
 
 
