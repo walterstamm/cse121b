@@ -49,9 +49,9 @@ myProfile.favoriteFoods.forEach(function(food) {
 /* Hobbies List */
 
 myProfile.hobbies.forEach(function(hobby) {
-    let ul = document.createElement("ul");
-    ul.textContent = hobby;
-    document.querySelector("#hobbies").appendChild(ul);
+    let li = document.createElement("li");
+    li.textContent = hobby;
+    document.querySelector("#hobbies").appendChild(li);
 });
 
 /* Places Lived DataList */
