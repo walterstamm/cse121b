@@ -30,13 +30,40 @@
     <h1>Weather Forecast Application</h1>
   </header>
 
-  <div id="weather-info">
-    <!-- Aquí se mostrará la información del clima -->
-  </div>
+  <!-- ... Tu código HTML existente ... -->
+
+<button onclick="toggleList()">Mostrar Lista de Países y Ciudades</button>
+
+<div id="locations" style="display:none;">
+  <select id="country">
+    <option value="usa">USA</option>
+    <option value="uk">UK</option>
+    <!-- Agrega más países según tus necesidades -->
+  </select>
+
+  <select id="city">
+    <!-- Agrega ciudades para cada país -->
+    <optgroup label="USA">
+      <option value="newyork">New York</option>
+      <option value="losangeles">Los Angeles</option>
+      <!-- Agrega más ciudades según tus necesidades -->
+    </optgroup>
+    <optgroup label="UK">
+      <option value="london">London</option>
+      <option value="manchester">Manchester</option>
+      <!-- Agrega más ciudades según tus necesidades -->
+    </optgroup>
+  </select>
+
+  <button onclick="fetchWeather()">Buscar Clima</button>
+</div>
+
+<!-- ... Tu código HTML existente ... -->
+
 
   <!-- Puedes agregar otros elementos y estructuras según tus necesidades -->
 
-  <script src="project.js"></script>
+  <script src="scripts/project.js"></script>
 </body>
 
 </html>
