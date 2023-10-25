@@ -17,7 +17,7 @@ function toggleList() {
     let selectedCity = document.getElementById("city").value;
     let cityName = document.getElementById("city")
     cityName = cityName.options[cityName.selectedIndex].text;
-    const response = await fetch(`http://dataservice.accuweather.com/currentconditions/v1/${selectedCity}?apikey=cXJo2LYmtQkfjEGtHnTS1x8rC8AoYYZN`);
+    const response = await fetch(`https://dataservice.accuweather.com/currentconditions/v1/${selectedCity}?apikey=cXJo2LYmtQkfjEGtHnTS1x8rC8AoYYZN`);
     let weatherData = await response.json();
     // console.log(weatherData[0])
     // console.log(weatherData[0].Temperature.Metric);
