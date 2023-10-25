@@ -17,18 +17,21 @@ function toggleList() {
     let selectedCity = document.getElementById("city").value;
     let cityName = document.getElementById("city")
     cityName = cityName.options[cityName.selectedIndex].text;
-    console.log(cityName)
     const response = await fetch(`http://dataservice.accuweather.com/currentconditions/v1/${selectedCity}?apikey=cXJo2LYmtQkfjEGtHnTS1x8rC8AoYYZN`);
     let weatherData = await response.json();
-    console.log(weatherData[0])
-    console.log(weatherData[0].Temperature.Metric);
+    // console.log(weatherData[0])
+    // console.log(weatherData[0].Temperature.Metric);
     displayCityData(weatherData[0],cityName);
 
+}
+function reset() {
+    cityDataElement.innerHTML = "";
 }
 
 
 const displayCityData = async (cityData,cityName) => {
-            cityDataElement.innerHTML = "";
+
+            reset();
             // Create the article element
             let article = document.createElement("article");
 
@@ -41,14 +44,28 @@ const displayCityData = async (cityData,cityName) => {
 
             let h4text = document.createElement("h4");
             h4text.textContent = 'Weather: ' + cityData.WeatherText;
+
+            let h4Date = document.createElement("h4");
+            h4Date.textContent = 'Local Date: ' + cityData.LocalObservationDateTime;
+
+             // Create the img element, set its src and alt attributes
+            let img = document.createElement("img");
+            let weatherIcon = cityData.WeatherIcon.toString();
+            if (weatherIcon.length < 2) {
+                weatherIcon = "0" + weatherIcon;
+            }
+            
+            img.src = `https://developer.accuweather.com/sites/default/files/${weatherIcon}-s.png`;
             
             let moreInfo = document.createElement("a");
             moreInfo.textContent = 'More info';
             moreInfo.href = cityData.Link; 
 
             article.appendChild(h3);
+            article.appendChild(img);
             article.appendChild(h4);
             article.appendChild(h4text);
+            article.appendChild(h4Date);
             article.appendChild(moreInfo);
             
            // Append the article element to the templesElement
