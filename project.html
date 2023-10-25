@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/project.css">
 </head>
 
 <body>
@@ -24,44 +25,57 @@
           <li><a href="project.html"  class="active">Project</a></li>
         </ul>
       </nav>
-  <!-- Aquí puedes agregar tus elementos HTML y contenido -->
-  <!-- Por ejemplo, puedes añadir un encabezado y un contenedor para mostrar la información del clima -->
+
   <header>
     <h1>Weather Forecast Application</h1>
   </header>
 
-  <!-- ... Tu código HTML existente ... -->
+  <div class="div-central">
+    <div style="text-align: center;">
+        <button onclick="toggleList()">Show List of Countries and Cities</button>
 
-<button onclick="toggleList()">Mostrar Lista de Países y Ciudades</button>
+        <div id="locations" style="display:none;">
 
-<div id="locations" style="display:none;">
-  <select id="country">
-    <option value="usa">USA</option>
-    <option value="uk">UK</option>
-    <!-- Agrega más países según tus necesidades -->
-  </select>
+            <select id="city">
+                <!-- Agrega ciudades para cada país -->
+                <optgroup label="America">
+                    <option value="242560">Mexico City-Mexico</option>
+                    <option value="347625">Los Angeles-USA</option>
+                    <option value="60449">Santiago-Chile</option>
+                    <!-- Agrega más ciudades según tus necesidades -->
+                </optgroup>
+                <optgroup label="Europa">
+                    <option value="328328">London-England</option>
+                    <option value="182536">Athens-Greece</option>
+                    <option value="308526">Madrid-Spain</option>
+                    <!-- Agrega más ciudades según tus necesidades -->
+                </optgroup>
+                <optgroup label="Africa">
+                  <option value="127164">Cairo-Egypt</option>
+                  <option value="113487">Kinshasa-Democratic Republic of the Congo</option>
+                  <option value="305448">Johannesburg-South Africa</option>
 
-  <select id="city">
-    <!-- Agrega ciudades para cada país -->
-    <optgroup label="USA">
-      <option value="newyork">New York</option>
-      <option value="losangeles">Los Angeles</option>
-      <!-- Agrega más ciudades según tus necesidades -->
-    </optgroup>
-    <optgroup label="UK">
-      <option value="london">London</option>
-      <option value="manchester">Manchester</option>
-      <!-- Agrega más ciudades según tus necesidades -->
-    </optgroup>
-  </select>
+                  <!-- Agrega más ciudades según tus necesidades -->
+              </optgroup>
+              <optgroup label="Asia">
+                <option value="101924">Beijing-China</option>
+                <option value="28143">Dhaka-Bangladesh</option>
+                <option value="208971">Jakarta-Indonesia</option>
+                <!-- Agrega más ciudades según tus necesidades -->
+            </optgroup>
+            </select>
 
-  <button onclick="fetchWeather()">Buscar Clima</button>
+            <button onclick="fetchWeather()">Search Weather Data</button>
+        </div>
+    </div>
+
+
+   
 </div>
 
-<!-- ... Tu código HTML existente ... -->
+<div class="div-down" id="data-weather">
+</div>
 
-
-  <!-- Puedes agregar otros elementos y estructuras según tus necesidades -->
 
   <script src="scripts/project.js"></script>
 </body>

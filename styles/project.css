@@ -1,0 +1,15 @@
+.div-central{
+    display: flex;
+    justify-content: center;
+    align-items: top; 
+    height: 30vh;
+    padding-top: 5%;
+}
+
+
+.div-down{
+    display: flex;
+    justify-content: center;
+    align-items: top; 
+    height: 30vh;
+}
